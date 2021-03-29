@@ -19,17 +19,18 @@ export class CityList extends React.Component{
   }
 };
 
-function mapStateToProps(state) {
+function mapReduxStateToProps(state) {
   return {
     cities: state.cities
   };
 }
 
 
-function mapDispatchToProps(dispatch) { return bindActionCreators(
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(
     { setCities: setCities },
     dispatch
   );
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(CityList);
+export default connect(mapReduxStateToProps, mapDispatchToProps)(CityList);
